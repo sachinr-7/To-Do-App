@@ -1,17 +1,23 @@
 
 
 <style>
+    
     .content {
       max-width: 500px;
       margin: auto;
+      font-family:cursive;
+    }
+    h1 { font-family:cursive;}
+    .button{
+        border-radius: 4px;
     }
 </style>
    
 <div class = "content">
 <html>
-    <body style="background-color: cadetblue;">
+    <body style="background-image:linear-gradient(to top,rgb(255, 6, 255), rgb(83, 26, 124),rgb(255, 6, 255));">
 
-<h1 style = "color:rgb(225, 255, 0);"> My To-Do List</h1>
+<h1 style = "color:white",> My To-Do List</h1>
 
 <form action ="/addTodoItem/" method = "post" > {% csrf_token %} 
     <input type = "test" name = "content">
@@ -24,7 +30,7 @@
     {% for i in all_items %} 
     <li> {{i.content}}
         <form action = "/deleteTodoItem/{{i.id}}/" method = "post"> {% csrf_token %}
-            <input type = "submit" value = "Delete">
+            <input style = "background-color:rgb(133, 42, 124)" type = "submit" value = "Delete">
         </form>
     </li>
     {% endfor %}
