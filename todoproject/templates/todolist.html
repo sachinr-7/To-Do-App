@@ -1,4 +1,17 @@
-<h1 color = "Green6"> My To-Do List</h1>
+
+
+<style>
+    .content {
+      max-width: 500px;
+      margin: auto;
+    }
+</style>
+   
+<div class = "content">
+<html>
+    <body style="background-color: cadetblue;">
+
+<h1 style = "color:rgb(225, 255, 0);"> My To-Do List</h1>
 
 <form action ="/addTodoItem/" method = "post" > {% csrf_token %} 
     <input type = "test" name = "content">
@@ -17,3 +30,6 @@
     {% endfor %}
 
 </ul>
+</div>
+</body>
+</html>
