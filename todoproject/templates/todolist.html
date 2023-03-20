@@ -11,17 +11,25 @@
     .button{
         border-radius: 4px;
     }
+
 </style>
-   
+<style>
+    body {
+      background-image: linear-gradient(to top,rgb(255, 6, 255), rgb(255, 251, 0),rgb(255, 6, 255));
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+</style>
 <div class = "content">
 <html>
-    <body style="background-image:linear-gradient(to top,rgb(255, 6, 255), rgb(83, 26, 124),rgb(255, 6, 255));">
+    <body>
 
 <h1 style = "color:white",> My To-Do List</h1>
 
 <form action ="/addTodoItem/" method = "post" > {% csrf_token %} 
     <input type = "test" name = "content">
-    <input type = "submit" value = "Add Todo Item">
+    <input type = "submit" value = "Add Todo Item" onclick = "abc()">
 </form>
 
 
@@ -30,7 +38,7 @@
     {% for i in all_items %} 
     <li> {{i.content}}
         <form action = "/deleteTodoItem/{{i.id}}/" method = "post"> {% csrf_token %}
-            <input style = "background-color:rgb(133, 42, 124)" type = "submit" value = "Delete">
+            <input style = "background-color:rgb(255, 247, 0)" type = "submit" value = "Delete">
         </form>
     </li>
     {% endfor %}
@@ -38,4 +46,13 @@
 </ul>
 </div>
 </body>
+
+<script>
+    var xyz = document.getElementsByName('content');
+    function abc(){
+        // alert('This is an alert')
+        console.log("Alert Message")
+    }
+</script>
+
 </html>
